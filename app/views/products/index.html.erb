@@ -1,0 +1,9 @@
+<div class = "container" "align-center">
+    <ul>
+        <% @products.each do |product|%>
+        <li>
+            Name : <%= product[:name] %>, Category : <%= product[:category] %>
+        </li>
+        <% end %>
+    </ul>
+</div>
