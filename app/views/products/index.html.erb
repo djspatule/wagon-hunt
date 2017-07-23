@@ -2,7 +2,7 @@
     <ul>
         <% @products.each do |product|%>
         <li>
-            Name : <%= product[:name] %>, Category : <%= product[:category] %>
+            Name : <%= product.name %>, Category : <%= product.category %>, URL : <%= product.url %>
         </li>
         <% end %>
     </ul>
