@@ -1,0 +1,12 @@
+<div class = "container" "text-center">
+    <h1>
+        New Product
+    </h1>
+    <%= simple_form_for @product do |f|  %>
+        <%= f.input :name, label: "Product name", placeholder: "Trello" %>
+        <%= f.input :category, label: "Product category", placeholder: "music or work or communication" %>
+        <%= f.input :url, label: "Product url", placeholder: "www.trello.com" %>
+        <%= f.button :submit, value: "Submit", class: "btn btn-primary" %>
+        
+    <% end %> 
+</div>
