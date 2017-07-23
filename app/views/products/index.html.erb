@@ -1,9 +1,20 @@
-<div class = "container" "align-center">
-    <ul>
-        <% @products.each do |product|%>
-        <li>
-            Name : <%= product.name %>, Category : <%= product.category %>, URL : <%= product.url %>
-        </li>
-        <% end %>
-    </ul>
+<div class = "container" "text-center">
+    <table style="width:100%">
+      <tr>
+        <th><%= link_to "Product", "https://rails-apps-djspatule.c9users.io/products?sort=name" %></th>
+        <th><%= link_to "Category", "https://rails-apps-djspatule.c9users.io/products?sort=category" %></th> 
+        <th>URL</th>
+      </tr>
+      <% @products.each do |product|%>
+          <tr>
+            <td><%= link_to product.name, product_path(product) %></td>
+            <td><%= product.category %></td> 
+            <td><%= link_to product.url, product.url %></td> 
+          </tr>
+      <% end %>
+    </table>
 </div>
+
+<p>
+    <%= link_to "Back to home", root_path %>
+</p>

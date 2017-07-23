@@ -1,4 +1,4 @@
-<div class = "container" text-align = "center"> 
+<div class = "container" "text-center"> 
     <h1>
         Wagon - Hunt
     </h1>
@@ -7,6 +7,11 @@
     </h4>
     <p>
         Category : <%= @product.category%>
+    </p>
+    <p>
         Url : <%= @product.url%>
+    </p>
+    <p>
+        <%= link_to "back to products list", products_path %>
     </p>
 </div>
