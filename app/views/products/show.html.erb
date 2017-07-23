@@ -12,6 +12,10 @@
         Url : <%= @product.url%>
     </p>
     <p>
+        <%= link_to "Edit", edit_product_path(@product), class: "btn btn-warning" %>
+        <%= link_to "Delete", product_path(@product), method: :delete, class: "btn btn-danger" %>
+    </p>
+    <p>
         <%= link_to "back to products list", products_path %>
     </p>
 </div>
