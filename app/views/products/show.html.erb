@@ -1,21 +1,13 @@
-<div class = "container" "text-center"> 
-    <h1>
-        Wagon - Hunt
-    </h1>
-    <h4>
-        Product Presentation : <%= @product.name %>
-    </h4>
-    <p>
-        Category : <%= @product.category%>
-    </p>
-    <p>
-        Url : <%= @product.url%>
-    </p>
-    <p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('background.jpg');">
+  <div class="banner-content">
+    <h1><%= @product.name %></h1>
+    <p><%= @product.category%></p>
+    <p><%= link_to "Get it", @product.url, class: "btn btn-primary btn-lg" %></p>
+     <p>
         <%= link_to "Edit", edit_product_path(@product), class: "btn btn-warning" %>
         <%= link_to "Delete", product_path(@product), method: :delete, class: "btn btn-danger" %>
     </p>
-    <p>
-        <%= link_to "back to products list", products_path %>
-    </p>
+    
+    
+  </div>
 </div>

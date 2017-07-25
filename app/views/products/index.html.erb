@@ -3,22 +3,26 @@
         Product List
     </h1>
     <p>
-    <%= link_to "New product", new_product_path, class: "btn btn-primary" %>
-</p>
-    <table style="width:100%">
-      <tr>
-        <th><%= link_to "Product", "https://rails-apps-djspatule.c9users.io/products?sort=name" %></th>
-        <th><%= link_to "Category", "https://rails-apps-djspatule.c9users.io/products?sort=category" %></th> 
-        <th>URL</th>
-      </tr>
-      <% @products.each do |product|%>
-          <tr>
-            <td><%= link_to product.name, product_path(product) %></td>
-            <td><%= product.category %></td> 
-            <td><%= link_to product.url, product.url %></td> 
-          </tr>
-      <% end %>
-    </table>
+      <%= link_to "Sort by product name       ", "https://rails-apps-djspatule.c9users.io/products?sort=name" %>
+      <%= link_to "Sort by category", "https://rails-apps-djspatule.c9users.io/products?sort=category" %>
+    </p>
+    <% @products.each do |product|%>
+      <div class="product">
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
+          <div class='product-count'>95</div>
+        </div>
+        <div class='product-body'>
+          <h3><%= link_to product.name, product_path(product) %></h3>
+          <p><%= product.category %></p>
+        </div>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li><%= link_to "", product_path(product), class: "fa fa-eye" %></li>
+        <li><%= link_to "", edit_product_path(product), class: "fa fa-pencil" %></li>
+        <li><%= link_to "", product_path(product), method: :delete, class: "fa fa-trash" %></li>
+      </ul>
+      </div>
+    <% end %>
 </div>
 
 <p>
