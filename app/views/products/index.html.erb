@@ -2,10 +2,6 @@
     <h1>
         Product List
     </h1>
-    <p>
-      <%= link_to "Sort by product name       ", "https://rails-apps-djspatule.c9users.io/products?sort=name" %>
-      <%= link_to "Sort by category", "https://rails-apps-djspatule.c9users.io/products?sort=category" %>
-    </p>
     <% @products.each do |product|%>
       <div class="product">
         <div class='product-upvote'>
@@ -17,12 +13,27 @@
           <p><%= product.category %></p>
         </div>
       <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li><%= link_to "", product_path(product), class: "fa fa-eye" %></li>
-        <li><%= link_to "", edit_product_path(product), class: "fa fa-pencil" %></li>
-        <li><%= link_to "", product_path(product), method: :delete, class: "fa fa-trash" %></li>
+        <li>
+                  <%= link_to product_path(product) do %>
+                    <i class="fa fa-eye"></i>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to edit_product_path(product) do %>
+                    <i class="fa fa-pencil"></i>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to product_path(product), method: :delete do %>
+                    <i class="fa fa-trash"></i>
+                  <% end %>
+                </li>
       </ul>
       </div>
     <% end %>
+    
 </div>
 
 <p>
