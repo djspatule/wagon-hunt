@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.destroy_all
+User.destroy_all
 
+User.create(email: "djspatule@wanadoo.fr", password:"testtest")
+User.create(email: "test@test.com", password:"testtest")
 Product.create!(name: "Trello", category: "work", url:"www.trello.com")
 Product.create!(name: "Odoo", category: "work", url:"www.odoo.com")
 Product.create!(name: "Slack", category: "communication", url:"www.slack.com")

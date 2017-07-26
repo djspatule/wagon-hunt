@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+skip_before_action :authenticate_user!, only: [:index, :show]
     def index
         if params[:filter] != nil
             @products = Product.select { |product| product[:category] == params[:filter] }
