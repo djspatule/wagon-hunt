@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: djspatule
+  api_key: '725592856954175'
+  api_secret: 7Exey-qnJNx71EZfyFyXyzp0TaQ
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: djspatule
+  api_key: '725592856954175'
+  api_secret: 7Exey-qnJNx71EZfyFyXyzp0TaQ
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: djspatule
+  api_key: '725592856954175'
+  api_secret: 7Exey-qnJNx71EZfyFyXyzp0TaQ
+  enhance_image_tag: true
+  static_image_support: false
