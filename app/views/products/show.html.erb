@@ -2,6 +2,7 @@
   <div class="banner-content">
     <h1><%= @product.name %></h1>
     <p><%= @product.category%></p>
+    <p><%= @product.user.email%></p>
     <p><%= link_to "Get it", @product.url, class: "btn btn-primary btn-lg" %></p>
      <p>
         <%= link_to "Edit", edit_product_path(@product), class: "btn btn-warning" %>

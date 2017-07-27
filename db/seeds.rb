@@ -11,7 +11,7 @@ User.destroy_all
 
 User.create(email: "djspatule@wanadoo.fr", password:"testtest")
 User.create(email: "test@test.com", password:"testtest")
-Product.create!(name: "Trello", category: "work", url:"www.trello.com")
-Product.create!(name: "Odoo", category: "work", url:"www.odoo.com")
-Product.create!(name: "Slack", category: "communication", url:"www.slack.com")
-Product.create!(name: "Garage Band", category: "music", url:"www.garageband.com")
+Product.create!(user_id: "8", name: "Trello", category: "work", url:"www.trello.com")
+Product.create!(user_id: "8", name: "Odoo", category: "work", url:"www.odoo.com")
+Product.create!(user_id: "9", name: "Slack", category: "communication", url:"www.slack.com")
+Product.create!(user_id: "9", name: "Garage Band", category: "music", url:"www.garageband.com")

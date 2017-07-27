@@ -17,6 +17,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     
     def create
         @product = Product.new(products_params)
+        @product.user = current_user
         if @product.save
            redirect_to products_path
         else
@@ -30,6 +31,9 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     
     def edit
         @product = Product.find(params[:id].to_i)
+        if @product.user != current_user
+        redirect_to products_path
+        end
     end
     
     def update
@@ -43,10 +47,14 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     
     def destroy
         @product = Product.find(params[:id].to_i)
-        if @product.destroy
-           redirect_to products_path
+        if @product.user == current_user
+            if @product.destroy
+               redirect_to products_path
+            else
+                render :show
+            end
         else
-            render :show
+            redirect_to products_path
         end
     end
     
