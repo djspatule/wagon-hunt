@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'devise'
 gem 'cloudinary'
 
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
