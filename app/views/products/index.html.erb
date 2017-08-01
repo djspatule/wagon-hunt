@@ -12,28 +12,28 @@
           <h3><%= link_to product.name, product_path(product) %></h3>
           <p><%= product.category %></p>
         </div>
-      <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li>
-                  <%= link_to product_path(product) do %>
-                    <i class="fa fa-eye"></i>
-                  <% end %>
-                </li>
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <li>
+            <%= link_to product_path(product) do %>
+              <i class="fa fa-eye"></i>
+            <% end %>
+          </li>
 
-                <li>
-                  <%= link_to edit_product_path(product) do %>
-                    <i class="fa fa-pencil"></i>
-                  <% end %>
-                </li>
+          <li>
+            <%= link_to edit_product_path(product) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %>
+          </li>
 
-                <li>
-                  <%= link_to product_path(product), method: :delete do %>
-                    <i class="fa fa-trash"></i>
-                  <% end %>
-                </li>
-      </ul>
+          <li>
+            <%= link_to product_path(product), method: :delete do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+          </li>
+        </ul>
       </div>
     <% end %>
-    
+
 </div>
 
 <p>

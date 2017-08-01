@@ -17,13 +17,15 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'cloudinary'
-
+gem 'attachinary'
+gem "jquery-fileupload-rails"
+gem "coffee-rails"
 
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'listen', '~> 3.0.5'
-  gem 'pry-byebug'
+  # gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

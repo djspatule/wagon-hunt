@@ -14,8 +14,9 @@
     <% if user_signed_in?%>
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <%= image_tag 'hunter.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: {toggle: "dropdown"}  %>
+<!--           <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+ -->          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Dashboard</a></li>
             <li><%=link_to "Log out", destroy_user_session_path, method: :delete%></li>
@@ -31,7 +32,7 @@
 
     <!-- Button (call-to-action) -->
     <%= link_to "Add product", new_product_path, class:"navbar-wagon-item navbar-wagon-button btn" %>
-    
+
   </div>
 
   <!-- Dropdown appearing on mobile only -->
