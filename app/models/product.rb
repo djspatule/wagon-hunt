@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
     belongs_to :user
+    has_many :upvotes
     has_attachment :illustration
 
     validates :name, presence: true, uniqueness: true

@@ -6,12 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#clean db
+Upvote.destroy_all
 Product.destroy_all
 User.destroy_all
 
+#create users
 djspatule = User.create(email: "djspatule@wanadoo.fr", password:"testtest")
 example = User.create(email: "test@test.com", password:"testtest")
-Product.create!(user_id: djspatule.id, name: "Trello", category: "work", url:"www.trello.com")
-Product.create!(user_id: djspatule.id, name: "Odoo", category: "work", url:"www.odoo.com")
-Product.create!(user_id: example.id, name: "Slack", category: "communication", url:"www.slack.com")
-Product.create!(user_id: example.id, name: "Garage Band", category: "music", url:"www.garageband.com")
+
+#create products
+trello = Product.create!(user: djspatule, name: "Trello", category: "work", url:"www.trello.com")
+odoo = Product.create!(user: djspatule, name: "Odoo", category: "work", url:"www.odoo.com")
+slack = Product.create!(user: example, name: "Slack", category: "communication", url:"www.slack.com")
+garage_band = Product.create!(user: example, name: "Garage Band", category: "music", url:"www.garageband.com")
+
+#create upvotes
+trello.upvotes.create!(user: djspatule)
+trello.upvotes.create!(user: example)
+slack.upvotes.create!(user: example)
+garage_band.upvotes.create!(user: example)
+

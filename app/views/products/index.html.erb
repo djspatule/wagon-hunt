@@ -4,10 +4,19 @@
   </h1>
     <% @products.each do |product|%>
       <div class="product">
-        <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <div class='product-count'>95</div>
-        </div>
+        <% if user_signed_in? %>
+          <%= link_to upvotes_path(product_id: product.id), class: "product-upvote", method: :POST do%>
+            <div class="product-arrow"></div>
+            <div class='product-count'>
+            <%= product.upvotes.size %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class='product-upvote'>
+            <div class="product-arrow"></div>
+            <div class='product-count'><%= product.upvotes.size %></div>
+          </div>
+        <% end %>
         <% if product.illustration? %>
         <%= cl_image_tag product.illustration.path,class: "product-image" %>
         <% else %>
