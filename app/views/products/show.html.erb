@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/djspatule/image/upload/v1501165074/sample.jpg');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @product.illustration? ? cloudinary_url(@product.illustration.path, width: 1280) : image_path("background.jpg", width: 1280)%>')">
   <div class="banner-content">
     <h1><%= @product.name %></h1>
     <p><%= @product.category%></p>
@@ -12,5 +12,3 @@
 
   </div>
 </div>
-
-<!-- url(<%= cl_image_path @product.avatar %>)  -->

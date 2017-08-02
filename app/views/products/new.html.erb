@@ -6,6 +6,8 @@
     <%= f.input :name, label: "Product name", placeholder: "Trello" %>
     <%= f.input :category, collection: ["music", "work", "communication"], prompt: "Select your category" %>
     <%= f.input :url, label: "Product url", placeholder: "www.trello.com" %>
+    <%= f.input :illustration, as: :attachinary %>
     <%= f.button :submit, value: "Submit", class: "btn btn-primary" %>
+
   <% end %>
 </div>

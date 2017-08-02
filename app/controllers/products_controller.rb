@@ -10,11 +10,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
             @products = Product.all
         end
     end
-    
+
     def show
        @product = Product.find(params[:id].to_i)
     end
-    
+
     def create
         @product = Product.new(products_params)
         @product.user = current_user
@@ -24,18 +24,18 @@ skip_before_action :authenticate_user!, only: [:index, :show]
             render :new
         end
     end
-    
+
     def new
         @product = Product.new
     end
-    
+
     def edit
         @product = Product.find(params[:id].to_i)
         if @product.user != current_user
         redirect_to products_path
         end
     end
-    
+
     def update
         @product = Product.find(params[:id].to_i)
         if @product.update(products_params)
@@ -44,7 +44,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
             render :edit
         end
     end
-    
+
     def destroy
         @product = Product.find(params[:id].to_i)
         if @product.user == current_user
@@ -57,9 +57,9 @@ skip_before_action :authenticate_user!, only: [:index, :show]
             redirect_to products_path
         end
     end
-    
+
     def products_params
-       params.require(:product).permit(:name, :category, :url)
+       params.require(:product).permit(:name, :category, :url, :illustration, :avatar)
     end
-    
+
 end
